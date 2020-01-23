@@ -1,0 +1,149 @@
+
+Schedule Logic
+
+Note: 3 shifts in a 24 hr period (12-8, 8-4, 4-12)
+1 month schedule should be generated 
+
+Generals 
+• User should have relief for atleast 16 hours
+• User should remain in the same time shift for a 7 day period. Eg. 8-4 Monday-Sunday
+• User required to work 40hrs in 7 day week.
+• Week begins monday and ends sunday. 
+• User should have atleast 1 off day after a 5 day period.
+• User entitled to 2 off days in 7 day week.
+• Every shift should have a shift leader (supervisor, sr. Officer) a maximum of 2, a minimum of 1. 
+• 2 supervisors cannot run a shift together
+• 2 sr. Officers can run a shift together 
+• Each day must account for officers schedule. Eg. Working 8-4, off/on vacation etc.
+
+
+Shifts
+
+12-8 shift
+• atleast 4 officers needed on weekdays
+• Atleast 3 officers needed on weekends 
+
+
+8-4 shift 
+• Atleast 9 officers needed on weekdays
+• Atleast 5 officers needed on weekends
+
+4-12 shift 
+• Atleast 4 officers needed on weekdays and weekends 
+
+Note
+Things that affect the schedule
+• Holidays (additional 3 officers needed on)
+• Personal day, vacation, sick day requests 
+• Personal requests (users going to school, etc)
+
+
+Duties
+
+1. Diary
+The security journal is used to account for all incidents, & events taking place within the bank.
+
+Dairy's to account for:
+
+A. Control Room
+• Govenors movement
+• Deputy govenors movement 
+• Number of banks reporting to central bank
+• Banks when they arrive 
+• Officers reporting on/off duty
+• Police visits 
+• Diary take over
+• Major Incident
+• Vendors in & out of bank
+• Officer floor/property check 
+• Officers reporting overtime 
+• Officers reporting sick
+• Officers reporting personal days
+• Banking activity
+• 
+
+
+B. New Extension
+• Vehicle activity
+• Police visits
+• Diary takeover
+• Major incident
+• Vendors in/out of bank
+• Visitors in/out of bank
+• Officer report on/off duty
+• Mail receipt
+C. Front Door
+• Diary takeover
+• Major incident
+• Vendors in/out of bank
+• Visitors in/out of bank
+• Mail receipt
+D. Trimark
+• Diary takeover
+• Major incident
+• Vendors in/out of bank
+• Visitors in/out of bank
+
+E. Parking lot
+• Diary take over 
+• Major Incident 
+• 
+
+2. Register 
+The security register is used to account for all officers reporting on and off duty.
+• Officer reporting on/off duty
+
+3. Visitor Log
+The security visitor log is used to account for all unexpected guests enterring the bank premices.
+
+4. Vehicle Log
+The security vehicle log is used to account for vehicles usage by approved personal.
+
+5. Police Visit Log
+The security police visit log is used to account for police officers reporting to bank on check ups
+
+6. Vendor log 
+The security vendor log is used to account for all expected guests enterring the bank premices, to conduct work.
+
+7. Mail receipt log
+The security mail receipt log is used to account for all packages enterring the bank premices for staff.
+
+
+Notifications
+
+1. Live 
+As users make diary entrys, that are considered important, notifiy users on bell . 
+2. Tasks
+Task within bank that are completed daily should notify users on set times and require completion & report. 
+3. Forum
+Updates/posts on forums by users, notify users on bell
+
+
+Forums
+Community for users and admin to post announcements and updates 
+
+
+Admin panel 
+(This is the control system of application for only admin)
+
+A. Forums
+- Create posts, delete posts
+
+D. Analytics
+- Observe statistics:
+• # of visitors currently in bank, who
+• # of vendors currently in bank, who
+• # of sick days, who
+• # of personal days, who
+• # of vacation days, who
+• # of officers currently on duty, who
+• # of officers currently off duty, who
+• # Forum posts
+
+
+H. Roles & permissions
+-add/delete employees from site, to enable them to manage & assist in admin duties
+-monitor and update permissions/features for users
+
+
+
