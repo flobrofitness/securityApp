@@ -3,13 +3,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
-    selector: 'app-sign-in',
-    templateUrl: './sign-in.component.html',
-    styleUrls: ['./sign-in.component.scss']
+    selector: 'app-sign-up',
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class SignUpComponent implements OnInit {
 
-    public singInForm: FormGroup;
+    public singUpForm: FormGroup;
 
     constructor(
         public authService: AuthService
@@ -20,24 +20,29 @@ export class SignInComponent implements OnInit {
     }
 
     public setupForm() {
-        this.singInForm = new FormGroup({
+        this.singUpForm = new FormGroup({
+            firstName: new FormControl(''),
+            // middleInitial: new FormControl(''),
+            lastName: new FormControl(''),
             email: new FormControl('', [
                 Validators.required,
                 Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\\.[a-zA-Z]{2,15}$')
             ]),
             password: new FormControl('', [
                 Validators.required,
-            ])
+            ]),
+            confirm: new FormControl('', [
+                Validators.required,
+            ]),
         });
-
     }
 
     public isFormInvalid(field: string) {
-        return (this.singInForm.get(field).invalid && this.singInForm.get(field).touched);
+        return (this.singUpForm.get(field).invalid && this.singUpForm.get(field).touched);
     }
 
-    public logIn(email: string, password: string) {
-        this.authService.SignIn(this.singInForm.get('email').value, this.singInForm.get('password').value)
+    public singUp() {
+
     }
 
 }

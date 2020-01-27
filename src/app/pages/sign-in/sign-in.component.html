@@ -1,41 +1,58 @@
-<div class="displayTable">
-    <div class="displayTableCell">
+<div class="container">
+    <div class="main-view mt-5">
+        <h3 class="mb-5">Sign In</h3>
 
-        <div class="px-logo">
-            <a href="https://www.positronx.io" target="_blank">
-                <img src="https://www.positronx.io/wp-content/themes/positronx/img/logo-positronx-white.svg"
-                    alt="positronX.io - Learn Full Stack Development">
-            </a>
-        </div>
+        <form [formGroup]="singInForm" autocomplete="off" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Email'"
+                            [inputId]="'email'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singInForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('email')"
+                            [errorMsg]="'Please enter your login email.'"
+                            [inputId]="'email'"
+                            [theFormGroup]="singInForm">
+                        </app-form-error>
+                    </div>
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Password'"
+                            [inputId]="'password'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singInForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('password')"
+                            [errorMsg]="'Please enter a valid password.'"
+                            [inputId]="'password'"
+                            [theFormGroup]="singInForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="formGroup">
+                        <input type="button" class="btn btnPrimary" value="Log in"
+                            (click)="logIn()">
+                    </div>
+                    <div class="formGroup">
+                        <span class="or"><span class="orInner">Or</span></span>
+                    </div>
 
-        <div class="authBlock">
-            <h3>Sign In</h3>
-            <div class="formGroup">
-                <input type="text" class="formControl" placeholder="Username" #userName required>
+                    <div class="forgotPassword">
+                        <span routerLink="/forgot-password">Forgot Password?</span>
+                    </div>
+
+                    <div class="redirectToLogin">
+                        <span>Don't have an account?<span class="redirect" routerLink="/sign-up"> Sign Up</span></span>
+                    </div>
+                </div>
             </div>
-
-            <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPassword required>
-            </div>
-
-            <!-- Calling SignIn Api from AuthService -->
-            <div class="formGroup">
-                <input type="button" class="btn btnPrimary" value="Log in"
-                    (click)="authService.SignIn(userName.value, userPassword.value)">
-            </div>
-
-            <div class="formGroup">
-                <span class="or"><span class="orInner">Or</span></span>
-            </div>
-
-            <div class="forgotPassword">
-                <span routerLink="/forgot-password">Forgot Password?</span>
-            </div>
-        </div>
-
-        <div class="redirectToLogin">
-            <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-        </div>
+        </form>
 
     </div>
 </div>

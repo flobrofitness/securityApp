@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="main-view mt-5">
+        <h3 class="mb-5">Sign In</h3>
+
+        <form [formGroup]="singUpForm" autocomplete="off" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'First Name'"
+                            [inputId]="'firstName'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('firstName')"
+                            [errorMsg]="'Please enter your first name.'"
+                            [inputId]="'firstName'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div>
+                    <!-- <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Middle Initial'"
+                            [inputId]="'middleInitial'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('middleInitial')"
+                            [errorMsg]="'Please enter your middle initial'"
+                            [inputId]="'middleInitial'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div> -->
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Last Name'"
+                            [inputId]="'lastName'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('lastName')"
+                            [errorMsg]="'Please enter your last name.'"
+                            [inputId]="'lastName'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Email'"
+                            [inputId]="'email'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('email')"
+                            [errorMsg]="'Please enter your email.'"
+                            [inputId]="'email'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Password'"
+                            [inputId]="'password'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('password')"
+                            [errorMsg]="'Please enter a password'"
+                            [inputId]="'password'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Confirm'"
+                            [inputId]="'confirm'"
+                            [inputType]="'text'"
+                            [theFormGroup]="singUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('confirm')"
+                            [errorMsg]="'Please re-enter your password.'"
+                            [inputId]="'confirm'"
+                            [theFormGroup]="singUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="formGroup">
+                        <input type="button" class="btn btnPrimary" value="Log in"
+                            (click)="singUp()">
+                    </div>
+                    <div class="formGroup">
+                        <span class="or"><span class="orInner">Or</span></span>
+                    </div>
+
+                    <div class="redirectToLogin">
+                        <span>Already Have an account?<span class="redirect" routerLink="/sign-in"> Sign In</span></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

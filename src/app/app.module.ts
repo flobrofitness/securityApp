@@ -23,7 +23,8 @@ import { AppConfig } from '../environments/environment';
 
 import { HomeModule } from './pages/home/home.module';
 import { ProfileModule } from './pages/profile/profile.module';
-import { SignInModule } from './pages/sign-in/sign-in.module'
+import { SignInModule } from './pages/sign-in/sign-in.module';
+import { SignUpModule } from './pages/sign-up/sign-up.module';
 
 import { AppComponent } from './app.component';
 
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         HomeModule,
         ProfileModule,
         SignInModule,
+        SignUpModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(AppConfig.firebaseConfig),
         AngularFireAnalyticsModule,
