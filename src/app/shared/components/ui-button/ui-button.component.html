@@ -1,0 +1,16 @@
+<button #button
+        [type]="buttonType"
+        [attr.id]="buttonId"
+        class="btn btn-spinner ui-button-with-spinner {{additionalClasses}}"
+        [disabled]="inProgress || isDisabled"
+        (click)="emitClickAction()">
+    <div class="button-content">
+        <!-- <ui-spinner
+            *ngIf="inProgress"
+            [colorClass]="'cw-very-dark-gray'"
+            [size]="'sm'">
+        </ui-spinner> -->
+        <span class="button-text {{textClass}}" [innerHTML]="buttonText"></span>
+        <i *ngIf="iconClass" class="button-icon fa {{iconClass}}" aria-hidden="true"></i>
+    </div>
+</button>

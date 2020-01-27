@@ -1,0 +1,67 @@
+.ui-button-with-spinner {
+	min-height: 50px;
+	overflow: hidden;
+	position: relative;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.ui-button-with-spinner .button-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-content ui-spinner {
+	width: 22px;
+}
+
+.button-content .button-text {
+	flex-grow: 1;
+}
+
+.button-content .button-icon {
+	width: 22px;
+	font-size: 22px;
+}
+
+/* additionalClass stuff */
+
+.button-for-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.discount-button {
+    height:  40px;
+}
+
+.answer-button {
+    font-size: 15px !important;
+}
+
+.remove-height {
+    min-height: 0;
+}
+
+.ui-button-with-spinner.btn-link.btn-25h {
+	height: 25px;
+	min-height: 25px;
+}
+
+.ui-button-with-spinner.btn-sm {
+	height: 31px;
+	min-height: 31px;
+}
+
+.cancel-color {
+    color: #CF292A !important;
+    position: absolute;
+    height: 20px;
+    width: 90px ;
+}
+
+.edit-color {
+    height: 20px;
+    width: 170%;
+}

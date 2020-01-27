@@ -7,7 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     PageNotFoundComponent,
     InputComponent,
-    FormErrorComponent
+    FormErrorComponent,
+    UiButtonComponent
 } from './components/';
 import { WebviewDirective } from './directives/';
 
@@ -16,7 +17,8 @@ import { WebviewDirective } from './directives/';
         PageNotFoundComponent,
         WebviewDirective,
         InputComponent,
-        FormErrorComponent
+        FormErrorComponent,
+        UiButtonComponent
     ],
     imports: [
         CommonModule,
@@ -30,7 +32,8 @@ import { WebviewDirective } from './directives/';
         FormsModule,
         ReactiveFormsModule,
         InputComponent,
-        FormErrorComponent
+        FormErrorComponent,
+        UiButtonComponent
     ]
 })
 export class SharedModule { }

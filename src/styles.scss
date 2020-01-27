@@ -5,3 +5,139 @@ html, body {
 
   height: 100%;
 }
+
+
+/*
+Buttons
+*/
+
+.btn {
+    font-weight: initial;
+    transition: all 0.3s ease;
+}
+
+.btn-optional {
+    color: #000000;
+    background-color: #FFCB05;
+    border-color: #FFCB05;
+    // font-family: 'SimplyCricket-Book', Helvetica, Arial, sans-serif;
+    height: 40px;
+    width: 100%;
+}
+
+.btn-optional:not(:disabled):hover {
+    color: #FFFFFF;
+    background-color: #FFCB05;
+    border-color: #FFCB05;
+}
+
+.btn-optional i {
+    color: #000000;
+    font-size: 16px;
+    float: right;
+    padding-top: 2px;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #1B75BB;
+    border-color: #1B75BB;
+    // font-family: 'SimplyCricket-Book', Helvetica, Arial, sans-serif;
+    height: 40px;
+    width: 100%;
+}
+
+.btn-primary:not(:disabled):hover {
+    color: #FFFFFF;
+    background-color: #1B75BB;
+    border-color: #1B75BB;
+}
+
+.btn-primary i {
+    color: #FFFFFF;
+    font-size: 16px;
+    float: right;
+    padding-top: 2px;
+}
+
+.btn-secondary {
+    color: #1B75BB;
+    background-color: #FFFFFF;
+    border-color: #1B75BB;
+    // font-family: 'SimplyCricket-Book', Helvetica, Arial, sans-serif;
+    height: 40px;
+    width: 100%;
+}
+
+.btn-secondary:not(:disabled):hover {
+    color: #1B75BB;
+    background-color: #FFFFFF;
+    border-color: #1B75BB;
+}
+
+.btn-secondary i {
+    color: #1B75BB;
+    font-size: 16px;
+    float: right;
+    padding-top: 2px;
+}
+
+.btn-danger {
+    background-color: #fff;
+    color: #CF292A;
+    border-color: #CF292A;
+    height: 40px;
+    width: 100%;
+}
+
+.btn-danger:not(:disabled):hover {
+    background-color: #fff;
+    color: #CF292A;
+    border-color: #CF292A;
+}
+
+.btn-danger.focus, .btn-danger:focus,
+.btn-danger:not(:disabled):not(.disabled).active:focus,
+.btn-danger:not(:disabled):not(.disabled):active:focus,
+.show>.btn-danger.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.btn-danger:not(:disabled):not(.disabled).active,
+.btn-danger:not(:disabled):not(.disabled):active,
+.show>.btn-danger.dropdown-toggle {
+    color: #CF292A;
+    background-color: #fff;
+    border-color: #CF292A;
+}
+
+.btn-danger i {
+    color: #CF292A;
+    font-size: 16px;
+    float: right;
+    padding-top: 2px;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-danger:disabled {
+    color: #6E6F72;
+    background-color: #E1DFE1;
+    border-color: #E1DFE1;
+}
+
+.btn-primary:disabled i,
+.btn-secondary:disabled i,
+.btn-danger:disabled i {
+    color: #6E6F72;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+.modal-footer-button {
+    // font-family: 'SimplyCricket-Demibold', Helvetica, sans-serif;
+    font-size: 14px;
+    min-height: 50px;
+}

@@ -25,6 +25,7 @@ import { HomeModule } from './pages/home/home.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { SignInModule } from './pages/sign-in/sign-in.module';
 import { SignUpModule } from './pages/sign-up/sign-up.module';
+import { VerifyEmailModule } from './pages/verify-email/verify-email.module';
 
 import { AppComponent } from './app.component';
 
@@ -45,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         ProfileModule,
         SignInModule,
         SignUpModule,
+        VerifyEmailModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(AppConfig.firebaseConfig),
         AngularFireAnalyticsModule,

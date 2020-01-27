@@ -1,6 +1,6 @@
 <div class="container">
     <div class="main-view mt-5">
-        <h3 class="mb-5">Sign In</h3>
+        <h3 class="mb-5">Sign Up</h3>
 
         <form [formGroup]="singUpForm" autocomplete="off" novalidate>
             <div class="row justify-content-center">
@@ -108,17 +108,23 @@
 
 
             <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <app-ui-button
+                        [buttonText]= "'SIGN IN'"
+                        [additionalClasses]="'btn-primary'"
+                        (buttonWasClicked)="singUp()">
+                    </app-ui-button>
+                </div>
+            </div>
+
+            <div class="row mt-2">
                 <div class="col-12">
-                    <div class="formGroup">
-                        <input type="button" class="btn btnPrimary" value="Log in"
-                            (click)="singUp()">
-                    </div>
                     <div class="formGroup">
                         <span class="or"><span class="orInner">Or</span></span>
                     </div>
 
                     <div class="redirectToLogin">
-                        <span>Already Have an account?<span class="redirect" routerLink="/sign-in"> Sign In</span></span>
+                        <span>Already Have an account?<a class="redirect" routerLink="/sign-in"> Sign In</a></span>
                     </div>
                 </div>
             </div>

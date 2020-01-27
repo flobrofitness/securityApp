@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
+import { User } from '../../core/models/user';
 
 @Component({
     selector: 'app-sign-up',
@@ -42,7 +43,17 @@ export class SignUpComponent implements OnInit {
     }
 
     public singUp() {
-
+        const newUser: User = {
+            uid: '',
+            firstName: this.singUpForm.get('firstName').value,
+            lastName: this.singUpForm.get('lastName').value,
+            email: this.singUpForm.get('email').value,
+            photoURL: '',
+            admin: false,
+            emailVerified: false,
+            userVerified: false
+        };
+        this.authService.SignUp(newUser, this.singUpForm.get('password').value);
     }
 
 }
