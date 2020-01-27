@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="main-view mt-5">
+        <h3 class="mb-5">Profile</h3>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-5">
+                <span>First Name:</span>
+                <span>{{authService.userData?.firstName}}</span>
+            </div>
+            <div class="col-12 col-lg-5">
+                <span>Last Name:</span>
+                <span>{{authService.userData?.lastName}}</span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-5">
+                <span>Email:</span>
+                <span>{{authService.userData?.email}}</span>
+            </div>
+            <div class="col-12 col-lg-5">
+            </div>
+        </div>
+    </div>
+</div>

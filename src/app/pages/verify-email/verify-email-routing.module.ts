@@ -5,7 +5,7 @@ import { VerifyEmailComponent } from './verify-email.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'verify-email',
     component: VerifyEmailComponent
   }
 ];
