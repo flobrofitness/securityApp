@@ -1,0 +1,72 @@
+.sidenav {
+    flex-basis: unset;
+    width: 300px;
+    flex-grow: unset;
+    background: #fff;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar-contents {
+    position: absolute;
+    text-align: left;
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #e1dfe1;
+    border-right: 1px solid #e1dfe1;
+    height: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 75px;
+}
+
+.sidebar-contents div {
+    text-align: center;
+    padding-bottom: 16px;
+    font-size: 17px;
+}
+.btn-collapse {
+    display: none;
+}
+.jumpling-body:last-child {
+    display: none;
+}
+.show-link {
+    display: none;
+}
+
+/* iPad */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1023px) {
+    .sidenav {
+        width: 200px;
+    }
+    .sidebar-contents {
+        width: 200px;
+    }
+    .sidenav-collapse {
+        width: 55px;
+        -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+        transition: width 1s;
+    }
+    .sidebar-contents-collapse .right {
+        display: none;
+    }
+    .sidebar-contents-collapse {
+        width: 55px;
+        -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+        transition: width 1s;
+    }
+    .btn-collapse {
+        display: block;
+    }
+    .jumpling-body:last-child {
+        display: block;
+    }
+    .show-link {
+        display: block;
+    }
+}

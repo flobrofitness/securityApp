@@ -1,5 +1,4 @@
 import { app, BrowserWindow, screen, ipcMain } from 'electron';
-import { autoUpdater } from 'electron-updater';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -59,7 +58,7 @@ try {
     // Some APIs can only be used after this event occurs.
     app.on('ready', () => {
         createWindow();
-        autoUpdater.checkForUpdatesAndNotify();
+        // autoUpdater.checkForUpdatesAndNotify();
     });
 
     // Quit when all windows are closed.
@@ -83,18 +82,18 @@ try {
         event.sender.send('app_version', { version: app.getVersion() });
     });
 
-    autoUpdater.on('update-available', () => {
-        console.log('\n\n\nShishi');
-        win.webContents.send('update_available');
-    });
+    // autoUpdater.on('update-available', () => {
+    //     console.log('\n\n\nShishi');
+    //     win.webContents.send('update_available');
+    // });
 
-    autoUpdater.on('update-downloaded', () => {
-        win.webContents.send('update_downloaded');
-    });
+    // autoUpdater.on('update-downloaded', () => {
+    //     win.webContents.send('update_downloaded');
+    // });
 
-    ipcMain.on('restart_app', () => {
-        autoUpdater.quitAndInstall();
-    });
+    // ipcMain.on('restart_app', () => {
+    //     autoUpdater.quitAndInstall();
+    // });
 
 } catch (e) {
     // Catch Error
