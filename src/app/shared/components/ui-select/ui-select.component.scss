@@ -1,0 +1,122 @@
+.float-input {
+    border: 1px solid #e1dfe1;
+    border-radius: 4px;
+    padding: 14px 4px 5px 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    position: relative;
+    background-color: white;
+}
+
+.float-input:focus-within {
+    border-width: 2px;
+    border-color: #1B75BB;
+}
+
+.invalid-value {
+    border-width: 1px;
+    border-color: #CF292A;
+}
+
+.float-input > .input-text {
+    position: absolute;
+    left: 0;
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+    top: 14px;
+    width: 100%;
+    box-shadow: none;
+    // font-family: 'SimplyCricket-Book';
+    font-size: 16px;
+    // color: #000;
+    z-index: 2;
+}
+
+.float-input > .floating-label {
+    position: absolute;
+    top: 14px;
+    -webkit-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -moz-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -o-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -ms-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    // font-family: 'SimplyCricket-Book';
+    // font-size: 14px;
+    color: #212529;
+}
+
+.float-input > select:focus ~ .floating-label,
+.float-input > select.ng-valid:not(:focus) ~ .floating-label,
+.value-entered .floating-label {
+    top: 3px;
+    font-size: 10px;
+    -webkit-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -moz-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -o-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    -ms-transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    transition: all 0.1667s cubic-bezier(0.26, 0.37, 0.77, 0.70);
+    // font-family: 'SimplyCricket-Demibold';
+}
+
+.float-input > select:focus ~ .floating-label {
+    color: #1B75BB;
+}
+
+.drop-down {
+    position: relative;
+}
+
+.drop-down::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 22px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #000;
+    clear: both;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+// option {
+//     font-family: 'SimplyCricket-Book', Helvetica, Arial, sans-serif;
+// }
+
+.float-input.drop-down select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+select::-ms-expand {
+    display: none; /* hide the default arrow in ie10 and ie11 */
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .float-input > .input-text {
+        font-size: 14px;
+    }
+}
+
+/* iPad */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1023px) {
+    .float-input {
+        padding: 21px 4px 5px 6px;
+    }
+
+    .float-input > .input-text {
+        padding-left: 5px;
+    }
+}
+

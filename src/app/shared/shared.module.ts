@@ -11,6 +11,8 @@ import {
     UiButtonComponent
 } from './components/';
 import { WebviewDirective } from './directives/';
+import { UiSelectComponent } from './components/ui-select/ui-select.component';
+import { UiRadioComponent } from './components/ui-radio/ui-radio.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { WebviewDirective } from './directives/';
         WebviewDirective,
         InputComponent,
         FormErrorComponent,
-        UiButtonComponent
+        UiButtonComponent,
+        UiSelectComponent,
+        UiRadioComponent
     ],
     imports: [
         CommonModule,
@@ -33,7 +37,9 @@ import { WebviewDirective } from './directives/';
         ReactiveFormsModule,
         InputComponent,
         FormErrorComponent,
-        UiButtonComponent
+        UiButtonComponent,
+        UiSelectComponent,
+        UiRadioComponent
     ]
 })
 export class SharedModule { }

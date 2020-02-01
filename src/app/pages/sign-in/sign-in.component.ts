@@ -36,8 +36,8 @@ export class SignInComponent implements OnInit {
         return (this.singInForm.get(field).invalid && this.singInForm.get(field).touched);
     }
 
-    public logIn(email: string, password: string) {
-        this.authService.SignIn(this.singInForm.get('email').value, this.singInForm.get('password').value)
+    public logIn() {
+        this.authService.signIn(this.singInForm.get('email').value, this.singInForm.get('password').value)
     }
 
 }

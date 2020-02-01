@@ -1,0 +1,14 @@
+<div class="float-input" [formGroup]="theFormGroup">
+	<label class="radio-container" *ngFor="let radioBtn of radioButtons">
+        <span class="text"
+            [class.disabled]="radioBtn.disabled"
+            [innerHTML]="radioBtn.value">
+        </span>
+        <input type="radio"
+            [value]="radioBtn.value"
+            [name]="inputId"
+            [attr.disabled]="radioBtn.disabled ? '' : null"
+            [formControlName]="inputId">
+		<span class="radio-checkmark"></span>
+	</label>
+</div>

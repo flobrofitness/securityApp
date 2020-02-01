@@ -1,0 +1,21 @@
+<div class="float-input drop-down {{additionalClasses}}"
+    [formGroup]="theFormGroup"
+    [ngClass]="{'invalid-value': theFormGroup.controls[inputId].touched && theFormGroup.controls[inputId].invalid}"
+    [class.disabled-section]="disabledFlag">
+    <select #selectDropdown
+            (change)="selectDropdown.focus()"
+            formControlName="{{inputId}}"
+            id="{{inputId}}"
+            class="input-text form-control">
+
+        <!-- This is needed for the safari issue where it preselects first option -->
+        <option hidden disabled selected value></option>
+
+        <option *ngFor="let item of items"
+                [value]="item.id"
+                [selected]="item.id === defaultValue">
+                    {{item.name}}
+        </option>
+    </select>
+    <label class="floating-label" for="{{inputId}}">{{placeHolderText}}</label>
+</div>

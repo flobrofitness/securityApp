@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { error } from '@angular/compiler/src/util';
 
 @Injectable({
     providedIn: 'root'
@@ -33,25 +34,28 @@ export class AuthService {
     }
 
     // Sign in with email/password
-    SignIn(email, password) {
+    signIn(email, password) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
             .then((result) => {
-                this.ngZone.run(() => {
-                    this.router.navigate(['home']);
-                });
-                this.setUserData(result.user,);
+                if (result.user.emailVerified) {
+                    this.ngZone.run(() => {
+                        this.router.navigate(['home']);
+                    });
+                } else {
+                    this.router.navigate(['verify-email']);
+                }
             }).catch((error) => {
                 window.alert(error.message)
             })
     }
 
     // Sign up with email/password
-    SignUp(newUser: User, password: string) {
+    signUp(newUser: User, password: string) {
         return this.afAuth.auth.createUserWithEmailAndPassword(newUser.email, password)
             .then((result) => {
                 /* Call the SendVerificaitonMail() function when new user sign
                 up and returns promise */
-                this.SendVerificationMail();
+                this.sendVerificationMail();
                 this.createUserData(result.user, newUser);
             }).catch((error) => {
                 window.alert(error.message)
@@ -59,7 +63,7 @@ export class AuthService {
     }
 
     // Send email verfificaiton when new user sign up
-    SendVerificationMail() {
+    sendVerificationMail() {
         return this.afAuth.auth.currentUser.sendEmailVerification()
             .then(() => {
                 this.router.navigate(['verify-email']);
@@ -67,7 +71,7 @@ export class AuthService {
     }
 
     // Reset Forggot password
-    ForgotPassword(passwordResetEmail) {
+    forgotPassword(passwordResetEmail) {
         return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
             .then(() => {
                 window.alert('Password reset email sent, check your inbox.');
@@ -100,34 +104,10 @@ export class AuthService {
     //         })
     // }
 
-    /* Setting up user data when sign in with username/password,
-    sign up with username/password and sign in with social auth
-    provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-    setUserData(user) {
-        const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-        const userData = {
-            uid: user.uid,
-            email: user.email,
-            emailVerified: user.emailVerified,
-        }
-        return userRef.set(userData, {
-            merge: true
-        });
-    }
-
-    createUserData(user, newUser) {
-        const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-        const userData: User = {
-            uid: user.uid,
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
-            email: user.email,
-            photoURL: user.photoURL,
-            admin: newUser.admin,
-            emailVerified: user.emailVerified || false,
-            userVerified: false,
-        }
-        return userRef.set(userData, {
+    createUserData(fbUser, newUser: User) {
+        const userRef: AngularFirestoreDocument<User> = this.afs.doc<User>(`users/${fbUser.uid}`);
+        newUser.uid = fbUser.uid;
+        return userRef.set(newUser, {
             merge: true
         });
     }

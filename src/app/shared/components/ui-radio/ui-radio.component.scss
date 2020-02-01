@@ -1,0 +1,82 @@
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    line-height: normal;
+    display: none;
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.radio-container input:checked~.radio-checkmark:after {
+    display: block;
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+   background: #1B75BB;
+   border: 1px solid #1B75BB;
+   cursor: pointer;
+}
+
+.radio-container input:disabled ~ .radio-checkmark {
+    background-color: rgb(246, 246, 246);
+    cursor: not-allowed;
+ }
+
+.radio-container input:checked ~ .radio-checkmark:after {
+    display: block;
+    left: 7.5px;
+    top: 2.5px;
+    width: 9px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.radio-container .text{
+    display: block;
+    padding-left: 10px;
+    padding-top: 4px;
+    // font-family: 'SimplyCricket-Book';
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.radio-container .text.disabled{
+    color: rgb(192, 189, 192);
+    cursor: not-allowed;
+}
+
+.radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 26px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #E1DFE1;
+    cursor: pointer;
+}
+
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}

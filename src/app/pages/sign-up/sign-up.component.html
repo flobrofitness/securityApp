@@ -2,56 +2,88 @@
     <div class="main-view mt-5">
         <h3 class="mb-5">Sign Up</h3>
 
-        <form [formGroup]="singUpForm" autocomplete="off" novalidate>
+        <form [formGroup]="signUpForm" autocomplete="off" novalidate>
             <div class="row justify-content-center">
+                <div class="col-12 col-lg-5 account-type">
+                    <div class="float-Input mb-4">
+                        <div class="text-label-language mb-2"
+                             [innerHTML]="'Account Type'"></div>
+                        <app-ui-radio
+                                [radioButtons]="accountTypeRadioButtons"
+                                [inputId]="'accountType'"
+                                [theFormGroup]="signUpForm">
+                        </app-ui-radio>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5"></div>
+            </div>
+            <div class="row justify-content-center">
+
                 <div class="col-12 col-lg-5">
                     <div class="float-Input mb-4">
                         <app-input
                             [placeHolderText]="'First Name'"
                             [inputId]="'firstName'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
                             [displayError]="isFormInvalid('firstName')"
                             [errorMsg]="'Please enter your first name.'"
                             [inputId]="'firstName'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
                     </div>
-                    <!-- <div class="float-Input mb-4">
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
                         <app-input
-                            [placeHolderText]="'Middle Initial'"
-                            [inputId]="'middleInitial'"
+                            [placeHolderText]="'Middle Name'"
+                            [inputId]="'middleName'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
-                            [displayError]="isFormInvalid('middleInitial')"
-                            [errorMsg]="'Please enter your middle initial'"
-                            [inputId]="'middleInitial'"
-                            [theFormGroup]="singUpForm">
+                            [displayError]="isFormInvalid('middleName')"
+                            [errorMsg]="'Please enter your middle name.'"
+                            [inputId]="'middleName'"
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
-                    </div> -->
+                    </div>
                 </div>
+
                 <div class="col-12 col-lg-5">
                     <div class="float-Input mb-4">
                         <app-input
                             [placeHolderText]="'Last Name'"
                             [inputId]="'lastName'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
                             [displayError]="isFormInvalid('lastName')"
                             [errorMsg]="'Please enter your last name.'"
                             [inputId]="'lastName'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Date of Birth'"
+                            [inputId]="'dob'"
+                            [inputType]="'text'"
+                            [theFormGroup]="signUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('dob')"
+                            [errorMsg]="'Please enter your date of birth.'"
+                            [inputId]="'dob'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
 
                 <div class="col-12 col-lg-5">
                     <div class="float-Input mb-4">
@@ -59,32 +91,79 @@
                             [placeHolderText]="'Email'"
                             [inputId]="'email'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
                             [displayError]="isFormInvalid('email')"
                             [errorMsg]="'Please enter your email.'"
                             [inputId]="'email'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
                     </div>
                 </div>
-                <div class="col-12 col-lg-5"></div>
-            </div>
-            <div class="row justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Address'"
+                            [inputId]="'address'"
+                            [inputType]="'text'"
+                            [theFormGroup]="signUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('address')"
+                            [errorMsg]="'Please enter your address.'"
+                            [inputId]="'address'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Mobile Phone'"
+                            [inputId]="'mobilePhone'"
+                            [inputType]="'text'"
+                            [theFormGroup]="signUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('mobilePhone')"
+                            [errorMsg]="'Please enter your mobile phone.'"
+                            [inputId]="'mobilePhone'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Work Phone'"
+                            [inputId]="'workPhone'"
+                            [inputType]="'text'"
+                            [theFormGroup]="signUpForm">
+                        </app-input>
+                        <app-form-error
+                            [displayError]="isFormInvalid('workPhone')"
+                            [errorMsg]="'Please enter your work phone.'"
+                            [inputId]="'workPhone'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+
                 <div class="col-12 col-lg-5">
                     <div class="float-Input mb-4">
                         <app-input
                             [placeHolderText]="'Password'"
                             [inputId]="'password'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
                             [displayError]="isFormInvalid('password')"
                             [errorMsg]="'Please enter a password'"
                             [inputId]="'password'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
                     </div>
                 </div>
@@ -94,23 +173,75 @@
                             [placeHolderText]="'Confirm'"
                             [inputId]="'confirm'"
                             [inputType]="'text'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-input>
                         <app-form-error
                             [displayError]="isFormInvalid('confirm')"
                             [errorMsg]="'Please re-enter your password.'"
                             [inputId]="'confirm'"
-                            [theFormGroup]="singUpForm">
+                            [theFormGroup]="signUpForm">
                         </app-form-error>
                     </div>
                 </div>
+            </div>
+
+            <div class="row justify-content-center" *ngIf="isAccountTypeAdmin">
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-ui-select
+                                [placeHolderText]="'Shift Preference'"
+                                [inputId]="'shiftPreference'"
+                                [theFormGroup]="signUpForm"
+                                [items]="shiftList">
+                        </app-ui-select>
+                        <app-form-error
+                            [displayError]="isFormInvalid('shiftPreference')"
+                            [errorMsg]="'Please select a shift preference.'"
+                            [inputId]="'shiftPreference'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-ui-select
+                                [placeHolderText]="'Day 1 Preference'"
+                                [inputId]="'dayOnePreference'"
+                                [theFormGroup]="signUpForm"
+                                [items]="dayList">
+                        </app-ui-select>
+                        <app-form-error
+                            [displayError]="isFormInvalid('dayOnePreference')"
+                            [errorMsg]="'Please select your first day of preference.'"
+                            [inputId]="'dayOnePreference'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="float-Input mb-4">
+                        <app-ui-select
+                                [placeHolderText]="'Day 2 Preference'"
+                                [inputId]="'dayTwoPreference'"
+                                [theFormGroup]="signUpForm"
+                                [items]="dayList">
+                        </app-ui-select>
+                        <app-form-error
+                            [displayError]="isFormInvalid('dayTwoPreference')"
+                            [errorMsg]="'Please select your second day of preference.'"
+                            [inputId]="'dayTwoPreference'"
+                            [theFormGroup]="signUpForm">
+                        </app-form-error>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5"></div>
             </div>
 
 
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <app-ui-button
-                        [buttonText]= "'SIGN IN'"
+                        [buttonText]= "'SIGN UP'"
                         [additionalClasses]="'btn-primary'"
                         (buttonWasClicked)="singUp()">
                     </app-ui-button>
