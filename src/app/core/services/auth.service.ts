@@ -12,6 +12,7 @@ import { error } from '@angular/compiler/src/util';
 
 export class AuthService {
     userData: any; // Save logged in user data
+    currentUserDetails: User;
 
     constructor(
         public afs: AngularFirestore,   // Inject Firestore service
@@ -23,9 +24,19 @@ export class AuthService {
         logged in and setting up null when logged out */
         this.afAuth.authState.subscribe(user => {
             if (user) {
+                console.log('capi....');
                 this.userData = user;
                 localStorage.setItem('user', JSON.stringify(this.userData));
                 JSON.parse(localStorage.getItem('user'));
+
+
+                const userRef: AngularFirestoreDocument<User> = this.afs.doc<User>(`users/${user.uid}`);
+                userRef.valueChanges().subscribe((user: User) => {
+                    this.currentUserDetails = user;
+                    console.log('Got user details...');
+                    console.log(user);
+                });
+
             } else {
                 localStorage.setItem('user', null);
                 JSON.parse(localStorage.getItem('user'));
@@ -120,4 +131,7 @@ export class AuthService {
         })
     }
 
+    getUserFullName() {
+        return this.currentUserDetails.firstName + ' ' + this.currentUserDetails.middleName + ' ' + this.currentUserDetails.lastName;
+    }
 }

@@ -3,12 +3,36 @@
         <h1 class="title">
             {{ 'PAGES.HOME.TITLE' | translate }}
         </h1>
-        <div class="col-12">tigri</div>
+
+        <div class="col-12" *ngFor="let diaryEntry of diaryService.getTodaysDiaryEntry() | async">
+            <p>{{diaryEntry?.comment}}</p>
+            <p>User: {{diaryEntry?.userFullName}}</p>
+        </div>
 
         <div class="col-12">tigri</div>
     </div>
 
     <div class="row input-section">
-        <div class="col-12">Input Place</div>
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="col-9">
+                    <div class="float-Input mb-4">
+                        <app-input
+                            [placeHolderText]="'Entry'"
+                            [inputId]="'entry'"
+                            [inputType]="'text'"
+                            [theFormGroup]="diaryEntryForm">
+                        </app-input>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <app-ui-button
+                        [buttonText]= "'Submit'"
+                        [additionalClasses]="'btn-primary'"
+                        (buttonWasClicked)="addDiaryEntry()">
+                    </app-ui-button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
