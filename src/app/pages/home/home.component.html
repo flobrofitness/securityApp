@@ -4,7 +4,7 @@
             {{ 'PAGES.HOME.TITLE' | translate }}
         </h1>
 
-        <div class="col-12" *ngFor="let diaryEntry of diaryService.getTodaysDiaryEntry() | async">
+        <div class="col-12" *ngFor="let diaryEntry of diaryService?.getTodaysDiaryEntry() | async">
             <p>{{diaryEntry?.comment}}</p>
             <p>User: {{diaryEntry?.userFullName}}</p>
         </div>

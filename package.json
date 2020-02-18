@@ -1,6 +1,6 @@
 {
     "name": "security-app",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "Angular 8 with Electron (Typescript + SASS + Hot Reload)",
     "homepage": "https://github.com/flobrofitness/securityApp",
     "author": {

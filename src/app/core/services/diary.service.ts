@@ -20,7 +20,7 @@ export class DiaryService {
         public ngZone: NgZone, // NgZone service to remove outside scope warning
         private authService: AuthService
     ) {
-        this.diaryEntryCollection = afs.collection<DiaryEntry>('diaryEntries');
+        this.diaryEntryCollection = afs.collection<DiaryEntry>('diaryEntries', ref => ref.orderBy('createdTime', 'asc'));
         this.diaryEntries = this.diaryEntryCollection.valueChanges();
     }
 
@@ -35,8 +35,8 @@ export class DiaryService {
             uid,
             comment,
             userFullName: this.authService.getUserFullName(),
-            createTime: JSON.stringify(new Date()),
-            updateTime: ''
+            createdTime: this.afs.firestore['_firebaseApp'].firebase_.firestore.FieldValue.serverTimestamp(),
+            updatedTime: ''
         };
         this.diaryEntryCollection.doc(uid).set(diaryEntry);
     }
