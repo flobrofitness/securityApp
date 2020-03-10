@@ -1,8 +1,9 @@
 {
-  "productName": "angular-electron",
-  "directories": {
-    "output": "release/"
-  },
+    "productName": "angular-electron",
+    "appId": "security.app",
+    "directories": {
+        "output": "release/"
+    },
     "files": [
         "**/*",
         "!**/*.ts",
@@ -19,22 +20,28 @@
         "!tsconfig.json",
         "!tslint.json"
     ],
-  "win": {
-    "icon": "dist",
-    "target": [
-      "portable"
+    "win": {
+        "icon": "dist",
+        "target": [
+            "portable"
+        ]
+    },
+    "mac": {
+        "icon": "dist",
+        "target": [
+            "dmg"
+        ]
+    },
+    "linux": {
+        "icon": "dist",
+        "target": [
+            "AppImage"
+        ]
+    },
+    "publish": [
+        {
+            "provider": "github",
+            "token": "2d2424f56f3de527a3a065d1aa40f944d9d81325"
+        }
     ]
-  },
-  "mac": {
-    "icon": "dist",
-    "target": [
-      "dmg"
-    ]
-  },
-  "linux": {
-    "icon": "dist",
-    "target": [
-      "AppImage"
-    ]
-  }
 }

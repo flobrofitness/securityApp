@@ -6,42 +6,32 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-5">
                     <div class="float-Input mb-4">
-                        <app-input
-                            [placeHolderText]="'Email'"
-                            [inputId]="'email'"
-                            [inputType]="'text'"
-                            [theFormGroup]="singInForm">
-                        </app-input>
-                        <app-form-error
-                            [displayError]="isFormInvalid('email')"
-                            [errorMsg]="'Please enter your login email.'"
-                            [inputId]="'email'"
-                            [theFormGroup]="singInForm">
-                        </app-form-error>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter your email</mat-label>
+                            <input matInput placeholder="pat@example.com" [formControl]="singInForm.get('email')" required>
+                            <mat-error *ngIf="isFormInvalid('email')">Please enter your login email.</mat-error>
+                          </mat-form-field>
                     </div>
                     <div class="float-Input mb-4">
-                        <app-input
-                            [placeHolderText]="'Password'"
-                            [inputId]="'password'"
-                            [inputType]="'text'"
-                            [theFormGroup]="singInForm">
-                        </app-input>
-                        <app-form-error
-                            [displayError]="isFormInvalid('password')"
-                            [errorMsg]="'Please enter a valid password.'"
-                            [inputId]="'password'"
-                            [theFormGroup]="singInForm">
-                        </app-form-error>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="singInForm.get('password')" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="isFormInvalid('password')">Please enter a valid password.</mat-error>
+                          </mat-form-field>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-5">
-                    <app-ui-button
+                    <!-- <app-ui-button
                         [buttonText]= "'Sign In'"
                         [additionalClasses]="'btn-primary'"
                         (buttonWasClicked)="logIn()">
-                    </app-ui-button>
+                    </app-ui-button> -->
+                    <button mat-raised-button color="primary" (click)="logIn()">Sign In</button>
                 </div>
             </div>
 

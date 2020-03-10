@@ -1,12 +1,13 @@
 <app-header></app-header>
 
+
 <div class="container-fluid">
 
-    <div class="row" [ngClass]="{'main': this.authService.isLoggedIn}">
+    <div class="row">
 
-        <ng-container *ngIf="this.authService.isLoggedIn">
+        <!-- <ng-container *ngIf="this.authService.isLoggedIn">
             <app-side-bar></app-side-bar>
-        </ng-container>
+        </ng-container> -->
 
         <div class="col-12 pages">
             <router-outlet></router-outlet>

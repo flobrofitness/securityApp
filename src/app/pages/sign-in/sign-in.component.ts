@@ -10,6 +10,7 @@ import { AuthService } from '../../core/services/auth.service';
 export class SignInComponent implements OnInit {
 
     public singInForm: FormGroup;
+    public hide: boolean = true;
 
     constructor(
         public authService: AuthService
