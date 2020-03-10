@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DiaryService } from '../../core/services/diary.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -9,29 +10,34 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-    public diaryEntryForm: FormGroup;
+    // public diaryEntryForm: FormGroup;
 
-    constructor(public diaryService: DiaryService) { }
+    constructor(public router: Router,
+        public diaryService: DiaryService) { }
 
     ngOnInit(): void {
-        this.setupForm();
+        // this.setupForm();
 
-        this.diaryService.diaryEntries.subscribe((res) => {
-            console.log(res);
-        })
+        // this.diaryService.diaryEntries.subscribe((res) => {
+        //     console.log(res);
+        // })
     }
 
-    public setupForm() {
-        this.diaryEntryForm = new FormGroup({
-            entry: new FormControl('', [
-                Validators.required
-            ])
-        });
-    }
+    // public setupForm() {
+    //     this.diaryEntryForm = new FormGroup({
+    //         entry: new FormControl('', [
+    //             Validators.required
+    //         ])
+    //     });
+    // }
 
-    addDiaryEntry() {
-        console.log('Adding diary entry...');
-        this.diaryService.createDiaryEntry(this.diaryEntryForm.value.entry);
+    // addDiaryEntry() {
+    //     console.log('Adding diary entry...');
+    //     this.diaryService.createDiaryEntry(this.diaryEntryForm.value.entry);
+    // }
+
+    public goToDiary() {
+        this.router.navigate(['diary']);
     }
 
 }

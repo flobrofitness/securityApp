@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, MatCardModule,
+    MatGridListModule } from '@angular/material';
+
 import {
     PageNotFoundComponent,
     InputComponent,
@@ -28,7 +31,15 @@ import { UiRadioComponent } from './components/ui-radio/ui-radio.component';
         CommonModule,
         TranslateModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        // MatError,
+        MatButtonModule,
+        MatCardModule,
+        MatGridListModule
     ],
     exports: [
         TranslateModule,
@@ -39,7 +50,15 @@ import { UiRadioComponent } from './components/ui-radio/ui-radio.component';
         FormErrorComponent,
         UiButtonComponent,
         UiSelectComponent,
-        UiRadioComponent
+        UiRadioComponent,
+
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        // MatError,
+        MatButtonModule,
+        MatCardModule,
+        MatGridListModule
     ]
 })
 export class SharedModule { }
